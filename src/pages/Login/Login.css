@@ -1,0 +1,96 @@
+.google-icon {
+    font-size: 37px;
+    width: 8%;
+    text-align: start;
+}
+
+.google-icon-text {
+    margin-bottom: 0;
+    text-align: center;
+    width: 90%;
+}
+
+.icon-btn {
+    padding: 3px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+
+.icon-btn:hover {
+
+    background-color: rgba(113, 113, 113, 0.141);
+}
+
+
+
+
+
+
+.login-container{
+    background-color: green;
+    margin: 0 auto;
+}
+
+
+
+
+
+@media only screen and (max-width: 595px) {
+    .auth-btn {
+        font-size: 14px;
+    }
+    .login-container{
+        width: 100%;
+    }
+    .search{
+        margin: 0 auto;
+    }
+}
+
+
+
+/* Small screen devices (600px and above) */
+@media only screen and (min-width: 600px) {
+    .google-icon{
+        width: auto;
+    }
+    .login-container{
+        width: 50%;
+        
+    }
+    .search{
+        margin: 0 auto;
+    }
+    .auth-btn {
+        font-size: 14px;
+    }
+}
+
+/* Medium screen devices (768px and above) */
+@media only screen and (min-width: 768px) {
+    .login-container{
+        width: 50%;
+    }
+    .search{
+        width: fit-content;
+    }
+    .remember-check{
+        font-size: 14px;
+    }
+    
+}
+
+/* Big screen devices (889px and above) */
+@media only screen and (min-width: 889px) {
+    .login-container{
+        width: 50%;
+    }
+}
+
+/* Extra big screen devices (1200px and above) */
+@media only screen and (min-width: 1200px) {
+    .login-container{
+        width: 50%;
+    }
+}

@@ -1,0 +1,64 @@
+
+.register-container{
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 595px) {
+    .auth-btn {
+        font-size: 14px;
+    }
+    .register-container{
+        width: 100%;
+        background-color: #000;
+    }
+    .search{
+        margin: 0 auto;
+    }
+}
+
+
+
+/* Small screen devices (600px and above) */
+@media only screen and (min-width: 600px) {
+    .google-icon{
+        width: auto;
+    }
+    .register-container{
+        width: 70%;
+        
+    }
+    .search{
+        margin: 0 auto;
+    }
+    .auth-btn {
+        font-size: 14px;
+    }
+}
+
+/* Medium screen devices (768px and above) */
+@media only screen and (min-width: 768px) {
+    .register-container{
+        width: 50%;
+    }
+    .search{
+        width: fit-content;
+    }
+    .remember-check{
+        font-size: 14px;
+    }
+    
+}
+
+/* Big screen devices (889px and above) */
+@media only screen and (min-width: 889px) {
+    .register-container{
+        width: 50%;
+    }
+}
+
+/* Extra big screen devices (1200px and above) */
+@media only screen and (min-width: 1200px) {
+    .register-container{
+        width: 50%;
+    }
+}
