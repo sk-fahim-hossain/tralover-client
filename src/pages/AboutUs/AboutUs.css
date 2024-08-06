@@ -1,0 +1,13 @@
+
+.info-container{
+    margin: 0 auto;
+    width: 80%;
+}
+
+.border{
+    width: 60px;
+    min-height: 5px;
+   
+    background-color: blue;
+    margin-bottom:30px;
+}

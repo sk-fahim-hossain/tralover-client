@@ -1,0 +1,13 @@
+.border{
+    width: 60px;
+    min-height: 5px;
+   
+    background-color: blue;
+    margin-bottom:30px;
+}
+.title{
+    margin: 40px 0px 0px 20px;
+}
+.thingsToDo{
+    min-height: 100vh;
+}

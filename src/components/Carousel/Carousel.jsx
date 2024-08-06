@@ -15,34 +15,38 @@ const Carousel = ({ places }) => {
 
     const { setCaroDetail } = useContext(PlaceContext)
 
-    return (
-        <div>
-            <Swiper
-                breakpoints={{
-                    560: {
-                        slidesPerView: 1
-                    },
-                    580:{
-                        slidesPerView: 2
-                    },
-                    640: {
-                        spaceBetween: 30,
-                        // width: 640,
-                        slidesPerView: 2,
-                    },
+    const breakpoints = {
+        560: {
+            slidesPerView: 1
+        },
+        580: {
+            slidesPerView: 2
+        },
+        640: {
+            spaceBetween: 30,
+            // width: 640,
+            slidesPerView: 2,
+        },
 
-                    768: {
-                        // width: 768,
-                        spaceBetween: 40,
-                        slidesPerView: 2,
-                    },
-                    900:{
-                        spaceBetween: 20,
-                        slidesPerView: 3,
-                    }
-                }}
+        768: {
+            // width: 768,
+            spaceBetween: 40,
+            slidesPerView: 2,
+        },
+        900: {
+            spaceBetween: 20,
+            slidesPerView: 3,
+        }
+    }
+    const swiper = useSwiper()
+    return (
+
+        <div>
+
+
+            <Swiper
+                breakpoints={breakpoints}
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
-                // spaceBetween={50}
                 navigation
                 loop
                 onSlideChange={() => console.log('slide change')}
@@ -50,18 +54,22 @@ const Carousel = ({ places }) => {
             >
 
 
-
                 {
-                    places.map(place => <SwiperSlide onMouseEnter={() => setCaroDetail(place)} key={place.image} className='slide'>
-                        <Link className='text-decoration-none' to={`booking/${place?.id}`}>
-                            <div className='single-slide'>
-                                <img src={place.image} className='img-fluid' alt="" />
-                                <p onClick={() => setCaroDetail(place)} >{place.name}</p>
-                            </div>
-                        </Link>
-                    </SwiperSlide>)
+                    places.map(place => <>
+                        <>
+                            <SwiperSlide onMouseEnter={() => setCaroDetail(place)} key={place.image} className='slide'>
+                                <Link className='text-decoration-none' to={`booking/${place?.name.toLowerCase()}`}>
+                                    <div className='single-slide'>
+                                        <img src={place.image} className='img-fluid' alt="" />
+                                        <p onClick={() => setCaroDetail(place)} >{place.name}</p>
+                                    </div>
+                                </Link>
+                            </SwiperSlide>
+                        </>
+                    </>)
                 }
                 <SwiperButtons ></SwiperButtons>
+
 
             </Swiper>
         </div >

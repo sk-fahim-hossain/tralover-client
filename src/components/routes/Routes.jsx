@@ -12,6 +12,10 @@ import Hotel from '../../pages/Hotel/Hotel';
 import Booking from '../../pages/Booking/Booking';
 import LoginLayout from '../../layout/LoginLayout';
 import PrivateRoute from './PrivateRoute';
+import AboutUs from '../../pages/AboutUs/AboutUs';
+import Contact from '../../pages/Contact/Contact';
+import Footer from '../Footer/Footer';
+import ThingsToDo from '../../pages/ThingsToDo/ThingsToDo';
 
 const router = createBrowserRouter([
   {
@@ -31,7 +35,14 @@ const router = createBrowserRouter([
         path: 'register',
         element: <Register></Register>
       },
-      
+      {
+        path:'about',
+        element: <AboutUs></AboutUs>
+      },
+      {
+        path:'things-to-do',
+        element: <ThingsToDo></ThingsToDo>
+      },
       
       {
         path: '/hotel',
@@ -46,15 +57,21 @@ const router = createBrowserRouter([
     element:<HomeLayout/>,
     children:[
       {
-        path: 'home/booking/:id',
+        path: 'home/booking/:place',
         element: <Booking></Booking>,
-        loader: (({ params }) => fetch(`http://localhost:5000/places/${params.id}`))
+        loader: (({ params }) => fetch(`https://tralover-server.vercel.app/places/${params.name}`))
       },
       {
         path:'home',
         element:<Home></Home>,
-        loader: (() => fetch('http://localhost:5000/places'))
-      }
+        loader: (() => fetch('https://tralover-server.vercel.app/places'))
+      },
+      {
+        path: 'contact',
+        element: <Contact></Contact>,
+        
+      },
+      
     ]
   }
 ])

@@ -14,7 +14,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <PlaceProvider>
       <AuthProvider>
         <RouterProvider router={router}>
-
         </RouterProvider>
       </AuthProvider>
     </PlaceProvider>

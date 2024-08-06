@@ -16,7 +16,7 @@ Navbar{
     
 }
 
-.search input {
+.search inputt {
     
     width: 300px;
     height: 45px;
@@ -24,13 +24,9 @@ Navbar{
     background: rgb(255, 255, 255,0.5);;
     border: 1px solid #aaa;
     border-radius: 5px;
-    /* box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset; */
+    box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
 }
 
-.search input {
-    text-indent: 32px;
-    
-}
 
 .search .fa-search {
     position: absolute;

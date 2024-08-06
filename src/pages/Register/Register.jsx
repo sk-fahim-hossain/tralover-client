@@ -51,25 +51,27 @@ const Register = () => {
             })
     }
     return (
-        <div className="mx-auto">
-            <Container className=' '>
+        <div className="mx-auto register-page">
+            <Container className=''>
                 <div className="register-container p-4 bg-light mt-3">
                     <h3>Create an account</h3>
                     <Form onSubmit={handleRegister}>
-                        <Form.Group className="mb-4" controlId="formBasicEmail">
-                            <Form.Label className='mt-3'>First Name</Form.Label>
-                            <Form.Control type="text" name="firstName" placeholder="" />
-                        </Form.Group>
-                        <Form.Group className="mb-4" controlId="formBasicEmail">
-                            <Form.Label className=''>Last Name</Form.Label>
-                            <Form.Control type="text" name="lastName" placeholder="" />
-                        </Form.Group>
-                        <Form.Group className="mb-4" controlId="formBasicEmail">
+                        <div className='d-flex gap-3 align-items-center'>
+                            <Form.Group className="mb-2 w-50" controlId="formBasicEmail">
+                                <Form.Label className=''>First Name</Form.Label>
+                                <Form.Control type="text" name="firstName" placeholder="" />
+                            </Form.Group>
+                            <Form.Group className="mb-2 w-50" controlId="formBasicEmail">
+                                <Form.Label className=''>Last Name</Form.Label>
+                                <Form.Control type="text" name="lastName" placeholder="" />
+                            </Form.Group>
+                        </div>
+                        <Form.Group className="mb-2" controlId="formBasicEmail">
                             <Form.Label className=''>Email address</Form.Label>
                             <Form.Control type="email" name='email' placeholder="" />
                         </Form.Group>
 
-                        <Form.Group className="mb-4" controlId="formBasicPassword">
+                        <Form.Group className="mb-2" controlId="formBasicPassword">
                             <Form.Label>Password</Form.Label>
                             <Form.Control type="password" name="password" placeholder="" />
                         </Form.Group>
@@ -89,20 +91,23 @@ const Register = () => {
                         <span>Or</span>
                         <hr className='text-black w-25 ms-3' />
                     </div>
+                    <div className='d-flex align-items-center justify-content-center'>
+                        <div onClick={hangleGoogleSignIn} className='d-flex align-items-center justify-content-center'>
+                            <div className='icon-btn border border-2  w-75 rounded-pill '>
+                                <FcGoogle className='google-icon'></FcGoogle>
+                                <p className='google-icon-text text-white '><small>Continue with Google</small></p>
+                            </div>
+                        </div>
+                        {/* sign in with facebook button */}
+                        <div className='d-flex align-items-center justify-content-center mt-2'>
+                            <div onClick={() => alert('Currently Meta is under Development')} className='icon-btn border border-2  w-75 rounded-pill '>
+                                <BsFacebook className='google-icon text-white'></BsFacebook>
+                                <p className='google-icon-text text-white '><small>Continue with Facebook</small></p>
+                            </div>
+                        </div>
+                    </div>
                     {/* sign with google button */}
-                    <div onClick={hangleGoogleSignIn} className='d-flex align-items-center justify-content-center'>
-                        <div className='icon-btn border border-2  w-75 rounded-pill '>
-                            <FcGoogle className='google-icon'></FcGoogle>
-                            <p className='google-icon-text'>Continue with Google</p>
-                        </div>
-                    </div>
-                    {/* sign in with facebook button */}
-                    <div className='d-flex align-items-center justify-content-center mt-2'>
-                        <div onClick={() => alert('Currently Meta is under Development')} className='icon-btn border border-2  w-75 rounded-pill '>
-                            <BsFacebook className='google-icon text-primary'></BsFacebook>
-                            <p className='google-icon-text'>Continue with Facebook</p>
-                        </div>
-                    </div>
+
                 </div>
             </Container>
         </div>

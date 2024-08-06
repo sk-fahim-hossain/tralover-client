@@ -1,12 +1,15 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Booker from '../../components/Booker/Booker';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useParams } from 'react-router-dom';
 
 
 const Booking = () => {
     const data = useLoaderData()
-    
+    const {selectedPlace} = useParams()
+   
+
+   
     return (
         <Container className="booking mx-auto text-white">
             <Row>
@@ -19,7 +22,7 @@ const Booking = () => {
                     </div>
                 </Col>
                 <Col sm={12} md={6}>
-                    <Booker data={data}></Booker>
+                    <Booker data={data} selectedPlace={selectedPlace} ></Booker>
                 </Col>
             </Row>
         </Container>

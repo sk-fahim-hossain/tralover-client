@@ -6,14 +6,16 @@ const PlaceProvider = ({children}) => {
     const [destination,setDestination] = useState([])
     const [caroDetail,setCaroDetail] = useState({})
     const [bookedDestination,setBookedDestination] = useState({})
+  
 
     useEffect(()=>{
-        fetch('http://localhost:5000/places')
+        fetch('https://tralover-server.vercel.app/places')
         .then(res => res.json())
         .then(data => setDestination(data))
     },[])
 
     
+      
 
     // console.log('context',destination[0]?.name)
 
@@ -28,6 +30,7 @@ const PlaceProvider = ({children}) => {
        setCaroDetail,
        bookedDestination,
        setBookedDestination,
+       
     }
     
     return (

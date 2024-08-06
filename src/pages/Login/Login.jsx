@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import './Login.css'
@@ -11,6 +11,7 @@ import { AuthContext } from '../../context/AuthProvider';
 const Login = () => {
     const [error, setError] = useState('')
     const { logIn, googleLogIn } = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -33,7 +34,9 @@ const Login = () => {
     const hangleGoogleSignIn = () => {
         googleLogIn()
             .then(result => {
-                console.log(result)
+                if(result.user){
+                    navigate('/places/home/booking')
+                }
             })
             .catch(error => {
                 setError(error.message)
@@ -43,7 +46,7 @@ const Login = () => {
     return (
         <div className="mx-auto">
             <Container className=''>
-                <div className='login-container p-4 bg-light mt-3'>
+                <div className='login-container p-4 bg-light mt-2'>
                     <h3>Please Login</h3>
                     <Form onSubmit={handleLogin}>
                         <div>{error && <p className='text-danger  p-2 rounded d-inline my-2'>{error}</p>}</div>
@@ -78,14 +81,14 @@ const Login = () => {
                     <div onClick={hangleGoogleSignIn} className='d-flex align-items-center justify-content-center auth-btn'>
                         <div className='icon-btn border border-2  w-75 rounded-pill '>
                             <FcGoogle className='google-icon'></FcGoogle>
-                            <p className='google-icon-text'>Continue with Google</p>
+                            <p className='google-icon-text text-white'>Continue with Google</p>
                         </div>
                     </div>
                     {/* sign with facebook button */}
-                    <div className='d-flex align-items-center justify-content-center mt-2 auth-btn'>
+                    <div className='d-flex align-items-center justify-content-center mt-1 auth-btn'>
                         <div className='icon-btn border border-2  w-75 rounded-pill '>
                             <BsFacebook className='google-icon text-primary'></BsFacebook>
-                            <p className='google-icon-text'>Continue with Facebook</p>
+                            <p className='google-icon-text text-white'>Continue with Facebook</p>
                         </div>
                     </div>
                 </div>
